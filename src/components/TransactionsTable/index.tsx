@@ -33,13 +33,20 @@ export function TransactionsTable() {
 
         <tbody>
           {transactions.map(transaction => (
-            <tr>
-              <td>Desenvolviento de website</td>
-              <td className={transaction === 2 ? 'withdraw' : 'deposit'}>
-                {transaction === 2 && '-'} R$12.000
+            <tr key={transaction.id}>
+              <td>{transaction.title}</td>
+              <td className={transaction.type}>
+                {new Intl.NumberFormat('pt-BR', {
+                  style: 'currency',
+                  currency: 'BRL'
+                }).format(transaction.amount)}
               </td>
-              <td>Desenvolvimento</td>
-              <td>20/02/2021</td>
+              <td>{transaction.category}</td>
+              <td>
+                {new Intl.DateTimeFormat('pt-BR').format(
+                  new Date(transaction.createdAt)
+                )}
+              </td>
             </tr>
           ))}
         </tbody>
