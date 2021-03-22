@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
   :root {
-    --barkground: #f0f2f5;
+    --background: #f0f2f5;
     --shape: #fff;
     --red: #e52e4d;
     --green: #33cc95;
@@ -29,7 +29,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: var(--barkground);
+    background: var(--background);
     -webkit-font-smoothing: antialiased;
   }
 
